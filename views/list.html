@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Translations</h3>
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Base translation</th>
+    <th>Translation</th>
+  </tr>
+{% for trans in translations %}
+<tr>
+  <td>{{ trans.key }}</td>
+  <td>{{ trans.base }}</td>
+  <td>{{ trans.translation }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

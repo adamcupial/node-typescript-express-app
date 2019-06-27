@@ -1,9 +1,10 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
+import { languages } from '../config';
 
 /**
  * GET /
  * Home page.
  */
-export const index = (req: Request, res: Response) => {
-  res.send("Hello");
+export const homepage = (req: Request, res: Response) => {
+  res.render('index.html', { languages });
 };
