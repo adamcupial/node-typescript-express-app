@@ -11,6 +11,7 @@ import nunjucks from 'nunjucks';
 
 import { homepage } from './controllers/home';
 import { list } from './controllers/list';
+import { edit } from './controllers/edit';
 
 
 if (fs.existsSync('.env')) {
@@ -33,6 +34,8 @@ nunjucks.configure(path.join(__dirname, '../views'), {
   express: app,
 });
 
+app.use(express.json());
+
 app.use(
   express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })
 );
@@ -41,6 +44,9 @@ app.use(
 
 app.get('/', homepage);
 app.get('/:language/', list);
+app.route('/:language/:key/')
+  .get(edit)
+  .post(edit);
 
 
 export default app;

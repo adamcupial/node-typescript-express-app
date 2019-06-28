@@ -24,4 +24,4 @@ node_modules
 bower_components
 
 # Ignore built ts files
-dist/**/*
+/dist

@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import { Translation, translations } from '../config';
+import { Translation } from '../models/translation';
 
 export const list = (req: Request, res: Response) => {
   const language = req.params['language'];
-  const languageTranslations = translations[language];
   res.render('list.html', {
     title: `Translations for ${language}`,
-    translations: languageTranslations,
+    translations: new Translation().get(language),
+    language,
   });
 
 };

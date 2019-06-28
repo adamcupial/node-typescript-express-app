@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="/{{ language }}/{{ key }}" method="post">
+  {% if hasErrors %}
+  <div class="msg msg--error">Please fix the errors below</div>
+  {% endif %}
+  <p>
+  <input type="text" name="key" readonly required value="{{ data['key'] }}">
+  {% if errors['key'] %}{{ errors['key'] }}{% endif %}
+  </p>
+  <p>
+  <input type="text" name="base" readonly required value="{{ data['base'] }}">
+  {% if errors['base'] %}{{ errors['base'] }}{% endif %}
+  </p>
+  <p>
+  <textarea name="translation" cols="30" rows="10" placeholder="Place translation here">{{ data['translation'] }}</textarea>
+  {% if errors['translation'] %}{{ errors['translation'] }}{% endif %}
+  </p>
+  <input type="submit">
+</form>
+{% endblock %}

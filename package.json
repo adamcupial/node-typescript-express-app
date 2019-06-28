@@ -28,12 +28,12 @@
     "dotenv": "^8.0.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
-    "express-validator": "^6.0.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.6.0",
     "nunjucks": "^3.2.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
+    "validator": "^11.0.0",
     "winston": "^2.4.2"
   },
   "devDependencies": {
@@ -53,6 +53,8 @@
     "@types/request": "^2.48.1",
     "@types/shelljs": "^0.8.5",
     "@types/supertest": "^2.0.7",
+    "@types/validator": "^10.11.1",
+    "@types/validatorjs": "^3.15.0",
     "@types/winston": "^2.3.9",
     "chai": "^4.2.0",
     "concurrently": "^4.1.0",
